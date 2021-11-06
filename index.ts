@@ -4,9 +4,15 @@ import os from "os";
 import { rhetorical } from "./routes";
 
 const app = express()
-
+app.use(express.json())
 
 const PORT = process.env.PORT || 8080;
+
+app.get("/", (req,res) => {
+    res.status(200).send({
+        "rhetorical":"/rhetorical?q=<query>"
+    })
+})
 
 app.get("/rhetorical", rhetorical)
 

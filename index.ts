@@ -1,7 +1,7 @@
 import express from "express";
 import os from "os";
 
-import { rhetorical } from "./routes";
+import { rhetorical, weather } from "./routes";
 
 const app = express()
 app.use(express.json())
@@ -15,6 +15,9 @@ app.get("/", (req,res) => {
 })
 
 app.get("/rhetorical", rhetorical)
+
+app.get("/weather", weather)
+
 
 app.listen( 
     PORT, () => console.log(`Listening of http://${os.hostname()}:${PORT}`)

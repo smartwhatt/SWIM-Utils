@@ -1,7 +1,7 @@
 import express from "express";
 import os from "os";
 
-import { rhetorical, weather } from "./routes";
+import { rhetorical, weather, news } from "./routes";
 
 const app = express()
 app.use(express.json())
@@ -17,6 +17,8 @@ app.get("/", (req,res) => {
 app.get("/rhetorical", rhetorical)
 
 app.get("/weather", weather)
+
+app.get("/news", news)
 
 
 app.listen( 

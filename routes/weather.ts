@@ -19,6 +19,13 @@ async function weather(req:Request, res:Response){
         })
     }
 
+    if (!lat || !lon){
+        res.status(400).send({
+            message: "Params \"lon\" and \"lat\" is required."
+        })
+        // return
+    }
+
     try {
         const weather = await axios.get(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${process.env.WEATHER_KEY}`)
         // console.log(weather)

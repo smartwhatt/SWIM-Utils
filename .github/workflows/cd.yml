@@ -43,3 +43,5 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
           build-args: |
             "weather=${{ secrets.WEATHER_KEY }}"
+            "news=${{ secrets.NEWS_KEY }}"
+
